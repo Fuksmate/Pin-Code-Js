@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.screen {
+  width: 300px;
+  height: 100px;
+  margin: 0 auto;
+  background-color: #f2f2f2;
+  border-radius: 5%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+.pin--login {
+  width: 300px;
+  margin: 0 auto;
+  background: red;
+}
+.pin--login__key {
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+  position: relative;
+  float: left;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pin--login__key:hover {
+  transform: scale(1.1);
+}
+.pin--login__key:active {
+  background-color: rgb(209, 209, 209);
+}
