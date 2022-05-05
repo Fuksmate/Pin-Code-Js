@@ -10,37 +10,42 @@ function removeLastKey(word) {
     return word.slice(0, -1);
 }
 
-function checkPassword(item, password) {
-    if (item == password) {
-        alert("Correct Password");
-    } else {
-        alert("Wrong Password");
-    }
+function clearScreen() {
+    setTimeout(() => {
+        displayOnPasswordChange(" ")
+        choiceNumber = "";
+    }, 1000);
 }
 
+function checkPassword(item, password) {
+    clearScreen()
+    return choiceNumber = item === password ? "Correct Password" : "Incorrect Password";
+}
 
 let choiceNumber = "";
 const password = "1234";
 const key = document.querySelectorAll('.pin--login__key');
 
 for (let i = 0; i < key.length; i++) {
-
     key[i].addEventListener('click', function (e) {
         const item = e.target.innerHTML;
 
         if (item === "rm") {
-
             choiceNumber = removeLastKey(choiceNumber);
+            displayOnPasswordChange(choiceNumber)
         }
-        else if (item === "ok") {
+        else {
+            const isOkay = (item === "ok")
+            const checkPasswords = (choiceNumber.length === password.length) ? checkPassword(choiceNumber, password) : "";
+            const addKey = (choiceNumber.length < password.length) ? choiceNumber = addKeytoPassword(choiceNumber, item) : "";
 
-            checkPassword(choiceNumber, password)
+            isOkay ? checkPasswords : addKey;
 
-        } else {
-            choiceNumber = addKeytoPassword(choiceNumber, item);
-           
+            displayOnPasswordChange(choiceNumber)
+
         }
-        displayOnPasswordChange(choiceNumber)
+
+
     });
 
 }
