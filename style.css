@@ -21,8 +21,8 @@ body {
 }
 .pin--login {
   width: 300px;
+  height: fit-content;
   margin: 0 auto;
-  background: red;
 }
 .pin--login__key {
   width: 80px;
