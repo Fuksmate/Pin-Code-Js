@@ -36,8 +36,8 @@ for (let i = 0; i < key.length; i++) {
         }
         else {
             const isOkay = (item === "ok")
-            const checkPasswords = (choiceNumber.length === password.length) ? checkPassword(choiceNumber, password) : "";
-            const addKey = (choiceNumber.length < password.length) ? choiceNumber = addKeytoPassword(choiceNumber, item) : "";
+            const checkPasswords = (choiceNumber.length === password.length) ? checkPassword(choiceNumber, password) : false;
+            const addKey = (choiceNumber.length < password.length) ? choiceNumber = addKeytoPassword(choiceNumber, item) : false;
 
             isOkay ? checkPasswords : addKey;
 
@@ -48,5 +48,3 @@ for (let i = 0; i < key.length; i++) {
     });
 
 }
-
-
